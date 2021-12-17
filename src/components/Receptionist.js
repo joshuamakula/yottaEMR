@@ -10,12 +10,12 @@ function Receptionist() {
             <Container>
                 <Row>
                     <ul className='heade-tab'>
-                        <li className='tab-list'>
+                        <Link to="/superadmin" className='tab-list'>
                             <div className='tab-link'>
                                 <span className='tab-title text-uppercase'>Super Admin</span>
                                 <span className='tab-desc'>Unlimited Roles</span>
                             </div>
-                        </li>
+                        </Link>
                         <Link to="/dashboard" className='tab-list'>
                             <div className='tab-link' >
                                 <span className='tab-title text-uppercase'>Admin</span>
@@ -54,6 +54,9 @@ function Receptionist() {
                                     <Nav variant="pills" className="">
                                         <Nav.Item>
                                             <Nav.Link eventKey="addpatient">Add Patient</Nav.Link>
+                                        </Nav.Item>
+                                        <Nav.Item>
+                                            <Nav.Link eventKey="createPatientVisit">Create Patient  Visit</Nav.Link>
                                         </Nav.Item>
                                     </Nav>
                                 </Col>
@@ -102,6 +105,53 @@ function Receptionist() {
                                                 <Form.Group className="mb-3" controlId="formBasicPassword">
                                                     <Form.Label>Religion</Form.Label>
                                                     <Form.Control type="text" name="religion"/>
+                                                </Form.Group>
+                                                
+                                                <Button variant="primary" type="submit" style={{width:'100%'}}>
+                                                    Submit
+                                                </Button>
+                                            </Form>
+                                        </Tab.Pane>
+                                        <Tab.Pane eventKey="createPatientVisit" className='tab-cont'>
+                                            <Form>
+                                                <Form.Group className="mb-3" controlId="formBasicEmail">
+                                                    <Form.Label>Card ID</Form.Label>
+                                                    <Form.Control type="text" name="card_id" />
+                                                </Form.Group>
+
+                                                <Form.Group className="mb-3" controlId="formBasicPassword">
+                                                    <Form.Label>Disease ID</Form.Label>
+                                                    <Form.Control type="text" name="disease_id"/>
+                                                </Form.Group>
+
+                                                <Form.Group className="mb-3" controlId="formBasicEmail">
+                                                    <Form.Label>Height</Form.Label>
+                                                    <Form.Control type="text" name="height" />
+                                                </Form.Group>
+
+                                                <Form.Group className="mb-3" controlId="formBasicPassword">
+                                                    <Form.Label>Hospital ID</Form.Label>
+                                                    <Form.Control type="text" name="hospital_id" />
+                                                </Form.Group>
+
+                                                <Form.Group className="mb-3" controlId="formBasicPassword">
+                                                    <Form.Label>Pressure</Form.Label>
+                                                    <Form.Control type="text" name="pressure"/>
+                                                </Form.Group>
+
+                                                <Form.Group className="mb-3" controlId="formBasicPassword">
+                                                    <Form.Label>Signs & Symptoms</Form.Label>
+                                                    <Form.Control type="text" name="signs_and_symptoms"/>
+                                                </Form.Group>
+
+                                                <Form.Group className="mb-3" controlId="formBasicPassword">
+                                                    <Form.Label>Visit Cost</Form.Label>
+                                                    <Form.Control type="text" name="visit_cost"/>
+                                                </Form.Group>
+
+                                                <Form.Group className="mb-3" controlId="formBasicPassword">
+                                                    <Form.Label>Weight</Form.Label>
+                                                    <Form.Control type="text" name="weight"/>
                                                 </Form.Group>
                                                 
                                                 <Button variant="primary" type="submit" style={{width:'100%'}}>
