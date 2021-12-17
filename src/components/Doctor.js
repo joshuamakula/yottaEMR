@@ -55,6 +55,9 @@ function Doctor() {
                                         <Nav.Item>
                                             <Nav.Link eventKey="requestTests">Request Tests</Nav.Link>
                                         </Nav.Item>
+                                        <Nav.Item>
+                                            <Nav.Link eventKey="prescription">Prescription</Nav.Link>
+                                        </Nav.Item>
                                     </Nav>
                                 </Col>
                             </Row>
@@ -125,6 +128,33 @@ function Doctor() {
                                                 
                                                 <Button variant="primary" type="submit" style={{width:'100%'}}>
                                                     Send Request
+                                                </Button>
+                                            </Form>
+                                        </Tab.Pane>
+                                        <Tab.Pane eventKey="prescription" className='tab-cont'>
+                                            <Form>
+                                                <Form.Group className="mb-3" controlId="formBasicEmail">
+                                                    <Form.Label>Card ID</Form.Label>
+                                                    <Form.Control type="text" name='card_id' placeholder="" />
+                                                </Form.Group>
+
+                                                <Form.Group className="mb-3" controlId="formBasicPassword">
+                                                    <Form.Label>Items</Form.Label>
+                                                    <Form.Control type="text" name='items' placeholder="" />
+                                                </Form.Group>
+
+                                                <Form.Group className="mb-3" controlId="formBasicPassword">
+                                                    <Form.Label>Medicine ID</Form.Label>
+                                                    <Form.Control type="text" name='medicine_id' placeholder="" />
+                                                </Form.Group>
+
+                                                <Form.Group className="mb-3" controlId="formBasicPassword">
+                                                    <Form.Label>Dose</Form.Label>
+                                                    <Form.Control type="text" name='dose' placeholder="" />
+                                                </Form.Group>
+
+                                                <Button variant="primary" type="submit" style={{width:'100%'}}>
+                                                    Submit
                                                 </Button>
                                             </Form>
                                         </Tab.Pane>

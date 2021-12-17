@@ -131,8 +131,8 @@ function SuperAdmin() {
                                                 </Form.Group>
                                                 
                                                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                                                    <Form.Label>Gender</Form.Label>
-                                                    <Form.Select aria-label="Default select example">
+                                                    <Form.Label>Role</Form.Label>
+                                                    <Form.Select name="roles" aria-label="Default select example">
                                                         <option>Select</option>
                                                         <option value="1">Doctor</option>
                                                         <option value="2">Lab Technician</option>
@@ -162,7 +162,36 @@ function SuperAdmin() {
                                             </Form>
                                         </Tab.Pane>
                                         <Tab.Pane eventKey="addsMedicine" className='tab-cont'>
-                                            Add Medicine
+                                            <Form>
+                                                <Form.Group className="mb-3" controlId="formBasicEmail">
+                                                    <Form.Label>Expiry Date</Form.Label>
+                                                    <Form.Control type="text" name='expiry_date' placeholder="Enter your full name" />
+                                                </Form.Group>
+
+                                                <Form.Group className="mb-3" controlId="formBasicPassword">
+                                                    <Form.Label>Manufacturer</Form.Label>
+                                                    <Form.Control type="text" name='manufacturer' placeholder="07123456789" />
+                                                </Form.Group>
+
+                                                <Form.Group className="mb-3" controlId="formBasicPassword">
+                                                    <Form.Label>Medicine Name</Form.Label>
+                                                    <Form.Control type="text" name='medicine_name' placeholder="" />
+                                                </Form.Group>
+
+                                                <Form.Group className="mb-3" controlId="formBasicPassword">
+                                                    <Form.Label>Medicine Price</Form.Label>
+                                                    <Form.Control type="text" name='medicine_price' placeholder="" />
+                                                </Form.Group>
+
+                                                <Form.Group className="mb-3" controlId="formBasicPassword">
+                                                    <Form.Label>Quantity</Form.Label>
+                                                    <Form.Control type="text" name='quantity' placeholder="" />
+                                                </Form.Group>
+
+                                                <Button variant="primary" type="submit" style={{width:'100%'}}>
+                                                    Submit
+                                                </Button>
+                                            </Form>
                                         </Tab.Pane>
                                         <Tab.Pane eventKey="addsCards" className='tab-cont'>
                                             Adds Cards

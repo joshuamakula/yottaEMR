@@ -131,8 +131,8 @@ function Dashboard() {
                                                 </Form.Group>
                                                 
                                                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                                                    <Form.Label>Gender</Form.Label>
-                                                    <Form.Select aria-label="Default select example">
+                                                    <Form.Label>Role</Form.Label>
+                                                    <Form.Select name="roles" aria-label="Default select example">
                                                         <option>Select</option>
                                                         <option value="1">Doctor</option>
                                                         <option value="2">Lab Technician</option>
