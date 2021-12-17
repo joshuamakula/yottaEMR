@@ -3,25 +3,25 @@ import { Button, Col, Container, Form, Nav, Row, Tab } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import NavBar from './NavBar';
 
-function Lab() {
+function Receptionist() {
     return (
         <div style={{ backgroundColor: '#F3F6F9' }}>
             <NavBar />
             <Container>
                 <Row>
                     <ul className='heade-tab'>
-                        <Link to="/superadmin" className='tab-list'>
+                        <li className='tab-list'>
                             <div className='tab-link'>
                                 <span className='tab-title text-uppercase'>Super Admin</span>
                                 <span className='tab-desc'>Unlimited Roles</span>
                             </div>
-                        </Link>
-                        <li className='tab-list'>
-                            <Link to="/dashboard" className='tab-link'>
+                        </li>
+                        <Link to="/dashboard" className='tab-list'>
+                            <div className='tab-link' >
                                 <span className='tab-title text-uppercase'>Admin</span>
                                 <span className='tab-desc'>Dashboard & Reports</span>
-                            </Link>
-                        </li>
+                            </div>
+                        </Link>
                         <li className='tab-list'>
                             <Link to='/patient' className='tab-link'>
                                 <span className='tab-title text-uppercase'>Patients</span>
@@ -29,97 +29,79 @@ function Lab() {
                             </Link>
                         </li>
                         <li className='tab-list'>
-                            <Link to='/doctor' className='tab-link'>
+                            <Link to="/doctor" className='tab-link'>
                                 <span className='tab-title text-uppercase'>Doctors</span>
                                 <span className='tab-desc'>Doctors & Profiles</span>
                             </Link>
                         </li>
                         <li className='tab-list'>
-                            <div className='tab-link' style={{backgroundColor:'#fff'}}>
+                            <Link to="/lab" className='tab-link'>
                                 <span className='tab-title text-uppercase'>Lab</span>
                                 <span className='tab-desc'>Diagnosis Management</span>
-                            </div>
+                            </Link>
                         </li>
                         <li className='tab-list'>
-                            <Link to="/receptionist" className='tab-link'>
+                            <Link to="/receptionist" className='tab-link' style={{backgroundColor:'#fff'}}>
                                 <span className='tab-title text-uppercase'>Receptionist</span>
                                 <span className='tab-desc'>Front Desk</span>
                             </Link>
                         </li>
                     </ul>
-                    <Tab.Container id="left-tabs-example" defaultActiveKey="performTest">
+                    <Tab.Container id="left-tabs-example" defaultActiveKey="addpatient">
                         <div className='cont-header'>
                             <Row>
                                 <Col>
                                     <Nav variant="pills" className="">
                                         <Nav.Item>
-                                            <Nav.Link eventKey="performTest">Perform Test</Nav.Link>
-                                        </Nav.Item>
-                                        <Nav.Item>
-                                            <Nav.Link eventKey="addTest">Add Test</Nav.Link>
+                                            <Nav.Link eventKey="addpatient">Add Patient</Nav.Link>
                                         </Nav.Item>
                                     </Nav>
                                 </Col>
                             </Row>
                         </div>
-                        <div style={{backgroundColor:'#fff', paddingTop:'15px', paddingBottom:'500px', marginBottom:'50px'}}>
+                        <div style={{backgroundColor:'#fff', paddingTop:'15px', paddingBottom:'15px', marginBottom:'50px'}}>
                             <Row>
                                 <Col>
                                     <Tab.Content>
-                                        <Tab.Pane eventKey="performTest" className='tab-cont'>
-                                            <Form>
-                                                <Form.Group className="mb-3" controlId="formBasicPassword">
-                                                    <Form.Label>Select Patient</Form.Label>
-                                                    <Form.Select aria-label="Default select example">
-                                                        <option>Select</option>
-                                                        <option value="1">Mark Doe</option>
-                                                        <option value="2">Jacob</option>
-                                                        <option value="2">Allan Lome</option>
-                                                    </Form.Select>
-                                                </Form.Group>
-                                                <Form.Group className="mb-3" controlId="formBasicPassword">
-                                                    <Form.Label>Select Test</Form.Label>
-                                                    <Form.Select aria-label="Default select example">
-                                                        <option>Select</option>
-                                                        <option value="1">PCR</option>
-                                                        <option value="2">Typhoid</option>
-                                                        <option value="2">Malaria</option>
-                                                    </Form.Select>
-                                                </Form.Group>
-                                                <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                                                    <Form.Label>Add notes</Form.Label>
-                                                    <Form.Control as="textarea" rows={3} />
-                                                </Form.Group>
-                                                <Button variant="primary" type="submit" style={{width:'100%'}}>
-                                                    Send Request
-                                                </Button>
-                                            </Form>
-                                        </Tab.Pane>
-                                        <Tab.Pane eventKey="addTest" className='tab-cont'>
+                                        <Tab.Pane eventKey="addpatient" className='tab-cont'>
                                             <Form>
                                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                                     <Form.Label>Card ID</Form.Label>
-                                                    <Form.Control type="text" name="card_id" placeholder="" />
+                                                    <Form.Control type="text" name="card_id" />
+                                                </Form.Group>
+
+                                                <Form.Group className="mb-3" controlId="formBasicPassword">
+                                                    <Form.Label>D.O.B</Form.Label>
+                                                    <Form.Control type="date" name="dob"/>
+                                                </Form.Group>
+
+                                                <Form.Group className="mb-3" controlId="formBasicPassword">
+                                                    <Form.Label>Gender</Form.Label>
+                                                    <Form.Select name="gender" aria-label="Default select example">
+                                                        <option>Select</option>
+                                                        <option value="1">Male</option>
+                                                        <option value="2">female</option>
+                                                    </Form.Select>
                                                 </Form.Group>
 
                                                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                                                    <Form.Label>Test Cost</Form.Label>
-                                                    <Form.Control type="text" name="test_cost" placeholder="" />
+                                                    <Form.Label>Name</Form.Label>
+                                                    <Form.Control type="email" name="name" />
                                                 </Form.Group>
 
                                                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                                                    <Form.Label>tests</Form.Label>
-                                                    <Form.Control type="text" name="test" placeholder="" />
+                                                    <Form.Label>NIN</Form.Label>
+                                                    <Form.Control type="text" name="nin" />
                                                 </Form.Group>
 
                                                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                                                    <Form.Label>Test Name</Form.Label>
-                                                    <Form.Control type="text" name="test_name" placeholder="" />
+                                                    <Form.Label>Phone Number</Form.Label>
+                                                    <Form.Control type="text" name="phone_number" placeholder="+1 (344) 187-3128" />
                                                 </Form.Group>
 
                                                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                                                    <Form.Label>Result</Form.Label>
-                                                    <Form.Control type="text" name="result" placeholder="" />
+                                                    <Form.Label>Religion</Form.Label>
+                                                    <Form.Control type="text" name="religion"/>
                                                 </Form.Group>
                                                 
                                                 <Button variant="primary" type="submit" style={{width:'100%'}}>
@@ -137,4 +119,4 @@ function Lab() {
         </div>
     )
 }
-export default Lab;
+export default Receptionist;

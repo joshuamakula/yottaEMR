@@ -40,6 +40,12 @@ function Dashboard() {
                                 <span className='tab-desc'>Diagnosis Management</span>
                             </Link>
                         </li>
+                        <li className='tab-list'>
+                            <Link to="/receptionist" className='tab-link'>
+                                <span className='tab-title text-uppercase'>Receptionist</span>
+                                <span className='tab-desc'>Front Desk</span>
+                            </Link>
+                        </li>
                     </ul>
                     <Tab.Container id="left-tabs-example" defaultActiveKey="createsUsers">
                         <div className='cont-header'>

@@ -40,6 +40,12 @@ function SuperAdmin() {
                                 <span className='tab-desc'>Diagnosis Management</span>
                             </Link>
                         </li>
+                        <li className='tab-list'>
+                            <Link to="/receptionist" className='tab-link'>
+                                <span className='tab-title text-uppercase'>Receptionist</span>
+                                <span className='tab-desc'>Front Desk</span>
+                            </Link>
+                        </li>
                     </ul>
                     <Tab.Container id="left-tabs-example" defaultActiveKey="createsUsers">
                         <div className='cont-header'>
@@ -51,6 +57,9 @@ function SuperAdmin() {
                                         </Nav.Item>
                                         <Nav.Item>
                                             <Nav.Link eventKey="createshospital">Create hospital</Nav.Link>
+                                        </Nav.Item>
+                                        <Nav.Item>
+                                            <Nav.Link eventKey="createRoles">Create roles</Nav.Link>
                                         </Nav.Item>
                                         <Nav.Item>
                                             <Nav.Link eventKey="assignsRoles">Assigns roles</Nav.Link>
@@ -172,6 +181,28 @@ function SuperAdmin() {
                                                         <option value="1">Doctor</option>
                                                         <option value="2">Lab Technician</option>
                                                     </Form.Select>
+                                                </Form.Group>
+
+                                                <Button variant="primary" type="submit" style={{width:'100%'}}>
+                                                    Submit
+                                                </Button>
+                                            </Form>
+                                        </Tab.Pane>
+                                        <Tab.Pane eventKey="createRoles" className='tab-cont'>
+                                            <Form>
+                                                <Form.Group className="mb-3" controlId="formBasicEmail">
+                                                    <Form.Label>Role Name</Form.Label>
+                                                    <Form.Control type="text" name='rolename'/>
+                                                </Form.Group>
+
+                                                <Form.Group className="mb-3" controlId="formBasicPassword">
+                                                    <Form.Label>Role Description</Form.Label>
+                                                    <Form.Control type="text" name='roledescription' />
+                                                </Form.Group>
+
+                                                <Form.Group className="mb-3" controlId="formBasicPassword">
+                                                    <Form.Label>permissions</Form.Label>
+                                                    <Form.Control type="text" name='permissions'/>
                                                 </Form.Group>
 
                                                 <Button variant="primary" type="submit" style={{width:'100%'}}>

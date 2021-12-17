@@ -9,6 +9,7 @@ import Patient from './components/Patient';
 import Doctor from './components/Doctor';
 import Lab from './components/Lab';
 import SuperAdmin from './components/SuperAdmin';
+import Receptionist from './components/Receptionist';
 function App() {
   return (
     <div>
@@ -21,6 +22,7 @@ function App() {
           <Route path="/doctor" element={<Doctor />} axact></Route>
           <Route path="/lab" element={<Lab />} axact></Route>
           <Route path="/superadmin" element={<SuperAdmin />} axact></Route>
+          <Route path="/receptionist" element={<Receptionist />} axact></Route>
         </Routes>
       </Router>
     </div>
