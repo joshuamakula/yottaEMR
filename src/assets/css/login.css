@@ -1,0 +1,43 @@
+.login-aside{
+    background: linear-gradient(147.04deg, #CA7B70 0.74%, #5A2119 99.61%);
+    /* background:linear-gradient(0deg, rgba(202, 123, 112, 0.074), rgba(90, 33, 25, 0.9961)), url('../images/svg/login-visual-4.svg'); */
+    height: 100vh;
+    padding-left: 2%;
+    display: flex;
+    align-items: center;
+}
+
+.login-right-side{
+    background-image: url('../images/svg/login-visual-4.svg') !important;
+}
+
+.display1-lg {
+    font-size: 5.5rem !important;
+    color: #ffffff !important;
+    font-weight: 700;
+}
+
+.flex-center{
+    height: 100vh;
+    padding-left: 20%;
+    display: flex;
+    align-items: center;
+}
+
+.emailphone{
+    height: auto !important;
+    padding: 1rem 1.5rem !important;
+    border-radius: 0.85rem !important;
+    border: 0 !important;
+    width: 40vw !important;
+    background-color: #EBEDF3  !important;
+    color: #3F4254  !important;
+}
+
+.login-logo{
+    padding-bottom: 5rem !important;
+}
+
+.form-group {
+    margin-bottom: 2.75rem !important;
+}
