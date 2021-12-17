@@ -50,6 +50,9 @@ function SuperAdmin() {
                                             <Nav.Link eventKey="createsUsers">Creates users</Nav.Link>
                                         </Nav.Item>
                                         <Nav.Item>
+                                            <Nav.Link eventKey="createshospital">Create hospital</Nav.Link>
+                                        </Nav.Item>
+                                        <Nav.Item>
                                             <Nav.Link eventKey="assignsRoles">Assigns roles</Nav.Link>
                                         </Nav.Item>
                                         <Nav.Item>
@@ -106,6 +109,38 @@ function SuperAdmin() {
                                                         <option value="1">Male</option>
                                                         <option value="2">female</option>
                                                     </Form.Select>
+                                                </Form.Group>
+                                                
+                                                <Button variant="primary" type="submit" style={{width:'100%'}}>
+                                                    Submit
+                                                </Button>
+                                            </Form>
+                                        </Tab.Pane>
+                                        <Tab.Pane eventKey="createshospital" className='tab-cont'>
+                                            <Form>
+                                                <Form.Group className="mb-3" controlId="formBasicEmail">
+                                                    <Form.Label>Health Facility Name</Form.Label>
+                                                    <Form.Control type="text" name="healthfacility_name" />
+                                                </Form.Group>
+
+                                                <Form.Group className="mb-3" controlId="formBasicEmail">
+                                                    <Form.Label>Incharge Name</Form.Label>
+                                                    <Form.Control type="text" name="Incharge_name" />
+                                                </Form.Group>
+
+                                                <Form.Group className="mb-3" controlId="formBasicEmail">
+                                                    <Form.Label>Incharge Number</Form.Label>
+                                                    <Form.Control type="text" name="Incharge_number" />
+                                                </Form.Group>
+
+                                                <Form.Group className="mb-3" controlId="formBasicPassword">
+                                                    <Form.Label>Longitude</Form.Label>
+                                                    <Form.Control type="text" name="long" />
+                                                </Form.Group>
+
+                                                <Form.Group className="mb-3" controlId="formBasicPassword">
+                                                    <Form.Label>latitude</Form.Label>
+                                                    <Form.Control type="text" name="latitude" />
                                                 </Form.Group>
                                                 
                                                 <Button variant="primary" type="submit" style={{width:'100%'}}>
@@ -194,7 +229,16 @@ function SuperAdmin() {
                                             </Form>
                                         </Tab.Pane>
                                         <Tab.Pane eventKey="addsCards" className='tab-cont'>
-                                            Adds Cards
+                                            <Form>
+                                                <Form.Group className="mb-3" controlId="formBasicEmail">
+                                                    <Form.Label>Card number</Form.Label>
+                                                    <Form.Control type="text" name='cardno'/>
+                                                </Form.Group>
+
+                                                <Button variant="primary" type="submit" style={{width:'100%'}}>
+                                                    Submit
+                                                </Button>
+                                            </Form>
                                         </Tab.Pane>
                                         <Tab.Pane eventKey="assignCards" className='tab-cont'>
                                             Assign Cards to a hospital
