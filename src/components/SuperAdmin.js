@@ -3,25 +3,25 @@ import { Button, Col, Container, Form, Nav, Row, Tab } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import NavBar from './NavBar';
 
-function Dashboard() {
+function SuperAdmin() {
     return (
         <div style={{ backgroundColor: '#F3F6F9' }}>
             <NavBar />
             <Container>
                 <Row>
                     <ul className='heade-tab'>
-                        <Link to="/superadmin" className='tab-list'>
-                            <div className='tab-link'>
+                        <li className='tab-list'>
+                            <div className='tab-link' style={{backgroundColor:'#fff'}}>
                                 <span className='tab-title text-uppercase'>Super Admin</span>
                                 <span className='tab-desc'>Unlimited Roles</span>
                             </div>
-                        </Link>
-                        <li className='tab-list'>
-                            <div className='tab-link' style={{backgroundColor:'#fff'}} >
+                        </li>
+                        <Link to="/dashboard" className='tab-list'>
+                            <div className='tab-link' >
                                 <span className='tab-title text-uppercase'>Admin</span>
                                 <span className='tab-desc'>Dashboard & Reports</span>
                             </div>
-                        </li>
+                        </Link>
                         <li className='tab-list'>
                             <Link to='/patient' className='tab-link'>
                                 <span className='tab-title text-uppercase'>Patients</span>
@@ -145,7 +145,21 @@ function Dashboard() {
                                             </Form>
                                         </Tab.Pane>
                                         <Tab.Pane eventKey="addDiseases" className='tab-cont'>
-                                            Add diseases
+                                            <Form>
+                                                <Form.Group className="mb-3" controlId="formBasicEmail">
+                                                    <Form.Label>Disease Name</Form.Label>
+                                                    <Form.Control type="text" name='disease_name' placeholder="Enter your full name" />
+                                                </Form.Group>
+
+                                                <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                                                    <Form.Label>Symptoms</Form.Label>
+                                                    <Form.Control name="disease_symptoms" as="textarea" rows={3} />
+                                                </Form.Group>
+
+                                                <Button variant="primary" type="submit" style={{width:'100%'}}>
+                                                    Submit
+                                                </Button>
+                                            </Form>
                                         </Tab.Pane>
                                         <Tab.Pane eventKey="addsMedicine" className='tab-cont'>
                                             Add Medicine
@@ -166,4 +180,4 @@ function Dashboard() {
         </div>
     )
 }
-export default Dashboard;
+export default SuperAdmin;

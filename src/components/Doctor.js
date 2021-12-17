@@ -4,8 +4,9 @@ import { Button, Card, Col, Container, Form, Nav, Row, Tab, Table } from 'react-
 import { Link } from 'react-router-dom';
 import { faHSquare } from '@fortawesome/free-solid-svg-icons';
 import NavBar from './NavBar';
+import { faEdit } from '@fortawesome/free-regular-svg-icons';
 
-function Patient() {
+function Doctor() {
     return (
         <div style={{ backgroundColor: '#F3F6F9' }}>
             <NavBar />
@@ -25,19 +26,19 @@ function Patient() {
                             </Link>
                         </li>
                         <li className='tab-list'>
-                            <Link to='/patient' className='tab-link' style={{backgroundColor:'#fff'}}>
+                            <Link to='/patient' className='tab-link'>
                                 <span className='tab-title text-uppercase'>Patients</span>
                                 <span className='tab-desc'>Patient Cards & Profiles</span>
                             </Link>
                         </li>
                         <li className='tab-list'>
-                            <Link to="/doctor" className='tab-link'>
+                            <div className='tab-link' style={{backgroundColor:'#fff'}}>
                                 <span className='tab-title text-uppercase'>Doctors</span>
                                 <span className='tab-desc'>Doctors & Profiles</span>
-                            </Link>
+                            </div>
                         </li>
                         <li className='tab-list'>
-                            <Link to="/lab" href='#!' className='tab-link' data-toggle="tab" data-target="#kt_header_tab_2" role="tab">
+                            <Link to="/lab" href='#!' className='tab-link'>
                                 <span className='tab-title text-uppercase'>Lab</span>
                                 <span className='tab-desc'>Diagnosis Management</span>
                             </Link>
@@ -52,13 +53,7 @@ function Patient() {
                                             <Nav.Link eventKey="patients">Patients</Nav.Link>
                                         </Nav.Item>
                                         <Nav.Item>
-                                            <Nav.Link eventKey="hospitals">Hospitals</Nav.Link>
-                                        </Nav.Item>
-                                        <Nav.Item>
-                                            <Nav.Link eventKey="speaktoadoctor">Speak to a doctor</Nav.Link>
-                                        </Nav.Item>
-                                        <Nav.Item>
-                                            <Nav.Link eventKey="homeservices">Home Services Requests</Nav.Link>
+                                            <Nav.Link eventKey="requestTests">Request Tests</Nav.Link>
                                         </Nav.Item>
                                     </Nav>
                                 </Col>
@@ -79,6 +74,7 @@ function Patient() {
                                                     <th>NIN</th>
                                                     <th>D.O.B</th>
                                                     <th>Gender</th>
+                                                    <th>Add notes</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -90,6 +86,7 @@ function Patient() {
                                                     <td>CM927364252512</td>
                                                     <td>23/01/1999</td>
                                                     <td>male</td>
+                                                    <td><FontAwesomeIcon icon={ faEdit }/></td>
                                                     </tr>
                                                     <tr>
                                                     <td>2</td>
@@ -99,6 +96,7 @@ function Patient() {
                                                     <td>CM927364252512</td>
                                                     <td>23/01/1999</td>
                                                     <td>male</td>
+                                                    <td><FontAwesomeIcon icon={ faEdit }/></td>
                                                     </tr>
                                                     <tr>
                                                     <td>3</td>
@@ -108,77 +106,27 @@ function Patient() {
                                                     <td>CM927364252512</td>
                                                     <td>23/01/1999</td>
                                                     <td>male</td>
+                                                    <td><FontAwesomeIcon icon={ faEdit }/></td>
                                                     </tr>
                                                 </tbody>
                                             </Table>
                                         </Tab.Pane>
-                                        <Tab.Pane eventKey="hospitals" className='tab-cont'>
-                                            <Row>
-                                                <Col>
-                                                    <Card style={{ width: '18rem'}}>
-                                                        <Card.Body style={{ display:'flex', justifyContent:'center' }}>
-                                                            <div>
-                                                                <Card.Text>
-                                                                <FontAwesomeIcon icon={faHSquare}  size="6x"/>
-                                                            </Card.Text>
-                                                            <Card.Title>Kawempe</Card.Title>
-                                                            </div>
-                                                            
-                                                        </Card.Body>
-                                                    </Card>
-                                                </Col>
-                                                <Col>
-                                                    <Card style={{ width: '18rem'}}>
-                                                        <Card.Body style={{ display:'flex', justifyContent:'center' }}>
-                                                            <div>
-                                                                <Card.Text>
-                                                                <FontAwesomeIcon icon={faHSquare}  size="6x"/>
-                                                            </Card.Text>
-                                                            <Card.Title>Naguru</Card.Title>
-                                                            </div>
-                                                            
-                                                        </Card.Body>
-                                                    </Card>
-                                                </Col>
-                                                <Col>
-                                                    <Card style={{ width: '18rem'}}>
-                                                        <Card.Body style={{ display:'flex', justifyContent:'center' }}>
-                                                            <div>
-                                                                <Card.Text>
-                                                                <FontAwesomeIcon icon={faHSquare}  size="6x"/>
-                                                            </Card.Text>
-                                                            <Card.Title>Kiswa</Card.Title>
-                                                            </div>
-                                                            
-                                                        </Card.Body>
-                                                    </Card>
-                                                </Col>
-                                            </Row>
-                                        </Tab.Pane>
-                                        <Tab.Pane eventKey="speaktoadoctor" className='tab-cont'>
+                                        <Tab.Pane eventKey="requestTests" className='tab-cont'>
                                             <Form>
-
-                                                <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                                                    <Form.Label>Your Email address</Form.Label>
-                                                    <Form.Control type="email" placeholder="name@example.com" />
+                                                <Form.Group className="mb-3" controlId="formBasicPassword">
+                                                    <Form.Label>Select Patient</Form.Label>
+                                                    <Form.Select aria-label="Default select example">
+                                                        <option>Select</option>
+                                                        <option value="1">Mark Doe</option>
+                                                        <option value="2">Jacob</option>
+                                                        <option value="2">Allan Lome</option>
+                                                    </Form.Select>
                                                 </Form.Group>
-
-                                                <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                                                    <Form.Label>Your Phone Number</Form.Label>
-                                                    <Form.Control type="text" placeholder="0712345678" />
-                                                </Form.Group>
-
-                                                <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                                                    <Form.Label>Describe your situation</Form.Label>
-                                                    <Form.Control as="textarea" rows={3} />
-                                                </Form.Group>
-                                                <Button variant="primary" type="submit">
-                                                    Submit
+                                                
+                                                <Button variant="primary" type="submit" style={{width:'100%'}}>
+                                                    Send Request
                                                 </Button>
                                             </Form>
-                                        </Tab.Pane>
-                                        <Tab.Pane eventKey="homeservices" className='tab-cont'>
-                                            home services request
                                         </Tab.Pane>
                                     </Tab.Content>
                                 </Col>
@@ -190,4 +138,4 @@ function Patient() {
         </div>
     )
 }
-export default Patient;
+export default Doctor;
