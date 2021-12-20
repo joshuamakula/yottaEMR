@@ -2,6 +2,13 @@ import React from 'react';
 import { Button, Col, Container, Form, Nav, Row, Tab } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import NavBar from './NavBar';
+import AddDiseases from './superAdmin/AddDiseases';
+import AddsCards from './superAdmin/AddsCards';
+import AddsMedicine from './superAdmin/AddsMedicine';
+import AssignsRoles from './superAdmin/AssignsRoles';
+import CreateRoles from './superAdmin/CreateRoles';
+import CreatesHospital from './superAdmin/CreatesHospital';
+import CreatesUsers from './superAdmin/CreatesUsers';
 
 function SuperAdmin() {
     return (
@@ -85,191 +92,25 @@ function SuperAdmin() {
                                 <Col>
                                     <Tab.Content>
                                         <Tab.Pane eventKey="createsUsers" className='tab-cont'>
-                                            <Form>
-                                                <Form.Group className="mb-3" controlId="formBasicEmail">
-                                                    <Form.Label>Name</Form.Label>
-                                                    <Form.Control type="text" placeholder="Enter your full name" />
-                                                </Form.Group>
-
-                                                <Form.Group className="mb-3" controlId="formBasicEmail">
-                                                    <Form.Label>Email address</Form.Label>
-                                                    <Form.Control type="email" placeholder="Enter email" />
-                                                </Form.Group>
-
-                                                <Form.Group className="mb-3" controlId="formBasicPassword">
-                                                    <Form.Label>Phone Number</Form.Label>
-                                                    <Form.Control type="text" placeholder="07123456789" />
-                                                </Form.Group>
-
-                                                <Form.Group className="mb-3" controlId="formBasicPassword">
-                                                    <Form.Label>NIN</Form.Label>
-                                                    <Form.Control type="text" placeholder="CM927364252512" />
-                                                </Form.Group>
-
-                                                <Form.Group className="mb-3" controlId="formBasicPassword">
-                                                    <Form.Label>D.O.B</Form.Label>
-                                                    <Form.Control type="date" placeholder="CM927364252512" />
-                                                </Form.Group>
-
-                                                <Form.Group className="mb-3" controlId="formBasicPassword">
-                                                    <Form.Label>Gender</Form.Label>
-                                                    <Form.Select aria-label="Default select example">
-                                                        <option>Select</option>
-                                                        <option value="1">Male</option>
-                                                        <option value="2">female</option>
-                                                    </Form.Select>
-                                                </Form.Group>
-                                                
-                                                <Button variant="primary" type="submit" style={{width:'100%'}}>
-                                                    Submit
-                                                </Button>
-                                            </Form>
+                                            <CreatesUsers />
                                         </Tab.Pane>
                                         <Tab.Pane eventKey="createshospital" className='tab-cont'>
-                                            <Form>
-                                                <Form.Group className="mb-3" controlId="formBasicEmail">
-                                                    <Form.Label>Health Facility Name</Form.Label>
-                                                    <Form.Control type="text" name="healthfacility_name" />
-                                                </Form.Group>
-
-                                                <Form.Group className="mb-3" controlId="formBasicEmail">
-                                                    <Form.Label>Incharge Name</Form.Label>
-                                                    <Form.Control type="text" name="Incharge_name" />
-                                                </Form.Group>
-
-                                                <Form.Group className="mb-3" controlId="formBasicEmail">
-                                                    <Form.Label>Incharge Number</Form.Label>
-                                                    <Form.Control type="text" name="Incharge_number" />
-                                                </Form.Group>
-
-                                                <Form.Group className="mb-3" controlId="formBasicPassword">
-                                                    <Form.Label>Longitude</Form.Label>
-                                                    <Form.Control type="text" name="long" />
-                                                </Form.Group>
-
-                                                <Form.Group className="mb-3" controlId="formBasicPassword">
-                                                    <Form.Label>latitude</Form.Label>
-                                                    <Form.Control type="text" name="latitude" />
-                                                </Form.Group>
-                                                
-                                                <Button variant="primary" type="submit" style={{width:'100%'}}>
-                                                    Submit
-                                                </Button>
-                                            </Form>
+                                            <CreatesHospital />>
                                         </Tab.Pane>
                                         <Tab.Pane eventKey="assignsRoles" className='tab-cont'>
-                                            <Form>
-                                                <Form.Group className="mb-3" controlId="formBasicEmail">
-                                                    <Form.Label>Full Name</Form.Label>
-                                                    <Form.Control type="text" name='fullname' placeholder="Enter your full name" />
-                                                </Form.Group>
-
-                                                <Form.Group className="mb-3" controlId="formBasicPassword">
-                                                    <Form.Label>Phone Number</Form.Label>
-                                                    <Form.Control type="text" name='phone' placeholder="07123456789" />
-                                                </Form.Group>
-
-                                                <Form.Group className="mb-3" controlId="formBasicPassword">
-                                                    <Form.Label>Hospital</Form.Label>
-                                                    <Form.Control type="text" name='hospitals' placeholder="" />
-                                                </Form.Group>
-                                                
-                                                <Form.Group className="mb-3" controlId="formBasicPassword">
-                                                    <Form.Label>Role</Form.Label>
-                                                    <Form.Select name="roles" aria-label="Default select example">
-                                                        <option>Select</option>
-                                                        <option value="1">Doctor</option>
-                                                        <option value="2">Lab Technician</option>
-                                                    </Form.Select>
-                                                </Form.Group>
-
-                                                <Button variant="primary" type="submit" style={{width:'100%'}}>
-                                                    Submit
-                                                </Button>
-                                            </Form>
+                                            <AssignsRoles />
                                         </Tab.Pane>
                                         <Tab.Pane eventKey="createRoles" className='tab-cont'>
-                                            <Form>
-                                                <Form.Group className="mb-3" controlId="formBasicEmail">
-                                                    <Form.Label>Role Name</Form.Label>
-                                                    <Form.Control type="text" name='rolename'/>
-                                                </Form.Group>
-
-                                                <Form.Group className="mb-3" controlId="formBasicPassword">
-                                                    <Form.Label>Role Description</Form.Label>
-                                                    <Form.Control type="text" name='roledescription' />
-                                                </Form.Group>
-
-                                                <Form.Group className="mb-3" controlId="formBasicPassword">
-                                                    <Form.Label>permissions</Form.Label>
-                                                    <Form.Control type="text" name='permissions'/>
-                                                </Form.Group>
-
-                                                <Button variant="primary" type="submit" style={{width:'100%'}}>
-                                                    Submit
-                                                </Button>
-                                            </Form>
+                                            <CreateRoles />
                                         </Tab.Pane>
                                         <Tab.Pane eventKey="addDiseases" className='tab-cont'>
-                                            <Form>
-                                                <Form.Group className="mb-3" controlId="formBasicEmail">
-                                                    <Form.Label>Disease Name</Form.Label>
-                                                    <Form.Control type="text" name='disease_name' placeholder="Enter your full name" />
-                                                </Form.Group>
-
-                                                <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                                                    <Form.Label>Symptoms</Form.Label>
-                                                    <Form.Control name="disease_symptoms" as="textarea" rows={3} />
-                                                </Form.Group>
-
-                                                <Button variant="primary" type="submit" style={{width:'100%'}}>
-                                                    Submit
-                                                </Button>
-                                            </Form>
+                                            <AddDiseases />
                                         </Tab.Pane>
                                         <Tab.Pane eventKey="addsMedicine" className='tab-cont'>
-                                            <Form>
-                                                <Form.Group className="mb-3" controlId="formBasicEmail">
-                                                    <Form.Label>Expiry Date</Form.Label>
-                                                    <Form.Control type="text" name='expiry_date' placeholder="Enter your full name" />
-                                                </Form.Group>
-
-                                                <Form.Group className="mb-3" controlId="formBasicPassword">
-                                                    <Form.Label>Manufacturer</Form.Label>
-                                                    <Form.Control type="text" name='manufacturer' placeholder="07123456789" />
-                                                </Form.Group>
-
-                                                <Form.Group className="mb-3" controlId="formBasicPassword">
-                                                    <Form.Label>Medicine Name</Form.Label>
-                                                    <Form.Control type="text" name='medicine_name' placeholder="" />
-                                                </Form.Group>
-
-                                                <Form.Group className="mb-3" controlId="formBasicPassword">
-                                                    <Form.Label>Medicine Price</Form.Label>
-                                                    <Form.Control type="text" name='medicine_price' placeholder="" />
-                                                </Form.Group>
-
-                                                <Form.Group className="mb-3" controlId="formBasicPassword">
-                                                    <Form.Label>Quantity</Form.Label>
-                                                    <Form.Control type="text" name='quantity' placeholder="" />
-                                                </Form.Group>
-
-                                                <Button variant="primary" type="submit" style={{width:'100%'}}>
-                                                    Submit
-                                                </Button>
-                                            </Form>
+                                            <AddsMedicine />
                                         </Tab.Pane>
                                         <Tab.Pane eventKey="addsCards" className='tab-cont'>
-                                            <Form>
-                                                <Form.Group className="mb-3" controlId="formBasicEmail">
-                                                    <Form.Label>Card number</Form.Label>
-                                                    <Form.Control type="text" name='cardno'/>
-                                                </Form.Group>
-
-                                                <Button variant="primary" type="submit" style={{width:'100%'}}>
-                                                    Submit
-                                                </Button>
-                                            </Form>
+                                            <AddsCards />
                                         </Tab.Pane>
                                         <Tab.Pane eventKey="assignCards" className='tab-cont'>
                                             Assign Cards to a hospital
